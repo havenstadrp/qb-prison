@@ -43,7 +43,7 @@ Config.Locations = {
         coords = vector4(1693.33, 2569.51, 45.55, 123.5)
     },
     ["shop"] = {
-        coords = vector4(1786.19, 2557.77, 45.62, 0.5)
+        coords = vector4(1780.795, 2559.029, 45.673, 0.5)
     },
     spawns = {
         [1] = {
@@ -79,8 +79,8 @@ Config.Locations = {
             coords = vector4(1770.59, 2536.064, 45.564, 258.113)
         },
         [9] = {
-            animation = "smoke",
-            coords = vector4(1792.45, 2584.37, 45.56, 276.24)
+            animation = "yoga",
+            coords = vector4(1741.391, 2544.401, 43.585, 302.8)
         },
         [10] = {
             animation = "smoke",
@@ -104,10 +104,66 @@ Config.CanteenItems = {
     },
     [2] = {
         name = "water_bottle",
-        price = 4,
+        price = 2,
         amount = 50,
         info = {},
         type = "item",
         slot = 2
+    },
+    [3] = {
+        name = "tosti",
+        price = 6,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 3
+    },
+    [4] = {
+        name = "eggsbacon",
+        price = 8,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 4
+    },
+    [5] = {
+        name = "taco",
+        price = 8,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 5
+    },
+    [6] = {
+        name = "hotdog",
+        price = 5,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 6
+    },
+    [7] = {
+        name = "coffee",
+        price = 3,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 7
+    },
+    [8] = {
+        name = "kurkakola",
+        price = 2,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 8
+    },
+    [9] = {
+        name = "fanta",
+        price = 2,
+        amount = 50,
+        info = {},
+        type = "item",
+        slot = 9
     }
 }
