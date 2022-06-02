@@ -10,42 +10,42 @@ Config.Locations = {
     jobs = {
         ["electrician"] = {
             [1] = {
-                coords = vector4(1761.46, 2540.41, 45.56, 272.249),
+                coords = vector4(1761.46, 2540.41, 45.56, 272.249)
             },
             [2] = {
-                coords = vector4(1718.54, 2527.802, 45.56, 272.249),
+                coords = vector4(1718.54, 2527.802, 45.56, 272.249)
             },
             [3] = {
-                coords = vector4(1700.199, 2474.811, 45.56, 272.249),
+                coords = vector4(1700.199, 2474.811, 45.56, 272.249)
             },
             [4] = {
-                coords = vector4(1664.827, 2501.58, 45.56, 272.249),
+                coords = vector4(1664.827, 2501.58, 45.56, 272.249)
             },
             [5] = {
-                coords = vector4(1621.622, 2509.302, 45.56, 272.249),
+                coords = vector4(1621.622, 2509.302, 45.56, 272.249)
             },
             [6] = {
-                coords = vector4(1627.936, 2538.393, 45.56, 272.249),
+                coords = vector4(1627.936, 2538.393, 45.56, 272.249)
             },
             [7] = {
-                coords = vector4(1625.1, 2575.988, 45.56, 272.249),
+                coords = vector4(1625.1, 2575.988, 45.56, 272.249)
             }
         }
     },
     ["freedom"] = {
-        coords = vector4(1836.37, 2585.33, 45.89, 272.96)
+        coords = vector4(1769.83, 2571.76, 44.73, 137.84)
     },
     ["outside"] = {
-        coords = vector4(1848.13, 2586.05, 45.67, 269.5)
+        coords = vector4(1836.87, 2585.35, 46.01, 269.9)
     },
     ["yard"] = {
-        coords = vector4(1765.67, 2565.91, 45.56, 1.5)
+        coords = vector4(1774.19, 2492.98, 45.74, 120.07)
     },
     ["middle"] = {
-        coords = vector4(1693.33, 2569.51, 45.55, 123.5)
+        coords = vector4(1687.45, 2596.03, 45.56, 93.4)
     },
     ["shop"] = {
-        coords = vector4(1780.795, 2559.029, 45.673, 0.5)
+        coords = vector4(1781.0, 2560.77, 44.67, 176.23)
     },
     spawns = {
         [1] = {
@@ -77,22 +77,39 @@ Config.Locations = {
             coords = vector4(1691.229, 2509.635, 45.564, 52.432)
         },
         [8] = {
-            animation = "finger2",
-            coords = vector4(1770.59, 2536.064, 45.564, 258.113)
+            animation = "smoke",
+            coords = vector4(1792.45, 2584.37, 45.56, 276.24)
         },
         [9] = {
-            animation = "yoga",
-            coords = vector4(1741.391, 2544.401, 43.585, 302.8)
-        },
-        [10] = {
             animation = "smoke",
             coords = vector4(1768.33, 2566.08, 45.56, 176.83)
         },
-        [11] = {
+        [10] = {
             animation = "smoke",
             coords = vector4(1696.09, 2469.4, 45.56, 1.4)
         }
     }
+}
+
+Config.Uniforms = {
+	['male'] = {
+		outfitData = {
+			['t-shirt'] = {item = 59, texture = 0},
+			['torso2']  = {item = 345, texture = 0},
+			['arms']    = {item = 2, texture = 0},
+			['pants']   = {item = 139, texture = 4},
+			['shoes']   = {item = 95, texture = 0},
+		}
+	},
+	['female'] = {
+		outfitData = {
+			['t-shirt'] = {item = 36, texture = 0},
+			['torso2']  = {item = 395, texture = 14},
+			['arms']    = {item = 0, texture = 0},
+			['pants']   = {item = 87, texture = 4},
+			['shoes']   = {item = 113, texture = 0},
+		}
+	},
 }
 
 Config.CanteenItems = {

@@ -200,7 +200,7 @@ end)
 
 RegisterNetEvent('prison:client:Enter', function(time)
 	QBCore.Functions.Notify( Lang:t("error.injail", {Time = time}), "error")
-
+	ChangeOutfit()
 	TriggerEvent("chatMessage", "SYSTEM", "warning", "Your property has been seized, you'll get everything back when your time is up..")
 	DoScreenFadeOut(500)
 	while not IsScreenFadedOut() do
@@ -315,6 +315,16 @@ CreateThread(function()
 		Wait(sleep)
 	end
 end)
+
+function ChangeOutfit()
+    local ped = PlayerPedId()
+    local gender = QBCore.Functions.GetPlayerData().charinfo.gender
+    if gender == 0 then
+        TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.male)
+    else
+        TriggerEvent('qb-clothing:client:loadOutfit', Config.Uniforms.female)
+    end
+end
 
 CreateThread(function()
 	if not Config.UseTarget then

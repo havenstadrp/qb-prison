@@ -6,7 +6,7 @@ local Translations = {
         ["cancelled"] = "Voortgang afgebroken..",
         ["didnt_work"] = "Het heeft niet gewerkt..",
         ["emty_box"] = "De doos is leeg..",
-        ["injail"] = "Je zit %{Time} maanden in de gevangenis..",
+        ["injail"] = "Je zit %{Time} dagen in de gevangenis..",
         ["item_missing"] = "Je mist een Item..",
         ["escaped"] = "Je bent ontsnapt... Maak dat je wegkomt.!",
         ["do_some_work"] = "Werk voor een strafvermindering, huidige baan: %{currentjob} ",
@@ -18,8 +18,9 @@ local Translations = {
         ["timesup"] = "Je tijd is voorbij! Check jezelf uit in het bezoekerscentrum",
     },
     info = {
-        ["timeleft"] = "Je hebt nog... %{JAILTIME} maanden",
+        ["timeleft"] = "Je hebt nog... %{JAILTIME} dagen",
         ["lost_job"] = "Je bent Werkloos",
+        ["job_interaction"] = "[E] - Fix electriciteit"
     }
 }
 Lang = Locale:new({
