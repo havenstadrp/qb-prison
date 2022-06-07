@@ -130,7 +130,7 @@ Config.CanteenItems = {
         slot = 2
     },
     [3] = {
-        name = "tosti",
+        name = "croque",
         price = 6,
         amount = 50,
         info = {},
@@ -170,7 +170,7 @@ Config.CanteenItems = {
         slot = 7
     },
     [8] = {
-        name = "kurkakola",
+        name = "cocacola",
         price = 2,
         amount = 50,
         info = {},
