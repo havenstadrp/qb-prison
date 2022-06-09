@@ -26,7 +26,7 @@ local function CreateCellsBlip()
 	SetBlipAsShortRange(CellsBlip, true)
 	SetBlipColour(CellsBlip, 4)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Cells")
+	AddTextComponentSubstringPlayerName("Cellen")
 	EndTextCommandSetBlipName(CellsBlip)
 
 	if TimeBlip then
@@ -40,7 +40,7 @@ local function CreateCellsBlip()
 	SetBlipAsShortRange(TimeBlip, true)
 	SetBlipColour(TimeBlip, 4)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Time check")
+	AddTextComponentSubstringPlayerName("Tijd check")
 	EndTextCommandSetBlipName(TimeBlip)
 
 	if ShopBlip then
@@ -54,7 +54,7 @@ local function CreateCellsBlip()
 	SetBlipAsShortRange(ShopBlip, true)
 	SetBlipColour(ShopBlip, 0)
 	BeginTextCommandSetBlipName("STRING")
-	AddTextComponentSubstringPlayerName("Canteen")
+	AddTextComponentSubstringPlayerName("Kantine")
 	EndTextCommandSetBlipName(ShopBlip)
 end
 
@@ -77,6 +77,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 	if DoesEntityExist(canteen_ped) or DoesEntityExist(freedom_ped) then return end
 
 	local pedModel = `s_m_m_armoured_01`
+	local pedModelCanteen = `a_f_m_eastsa_01`
 
 	RequestModel(pedModel)
 	while not HasModelLoaded(pedModel) do
@@ -89,7 +90,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 	SetBlockingOfNonTemporaryEvents(freedom_ped, true)
 	TaskStartScenarioInPlace(freedom_ped, 'WORLD_HUMAN_CLIPBOARD', 0, true)
 
-	canteen_ped = CreatePed(0, pedModel, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, Config.Locations["shop"].coords.w, false, true)
+	canteen_ped = CreatePed(0, pedModelCanteen, Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z, Config.Locations["shop"].coords.w, false, true)
 	FreezeEntityPosition(canteen_ped, true)
 	SetEntityInvincible(canteen_ped, true)
 	SetBlockingOfNonTemporaryEvents(canteen_ped, true)
@@ -173,7 +174,7 @@ AddEventHandler('onResourceStart', function(resource)
 				type = "client",
 				event = "prison:client:Leave",
 				icon = 'fas fa-clipboard',
-				label = 'Check time',
+				label = 'Check tijd resterend',
 				canInteract = function()
 					return inJail
 				end
@@ -336,24 +337,24 @@ CreateThread(function()
 	if not Config.UseTarget then
 		freedom = BoxZone:Create(vector3(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z), 2.75, 2.75, {
 			name="freedom",
-			debugPoly = false,
+			debugPoly = true,
 		})
 		freedom:onPlayerInOut(function(isPointInside)
 			insidefreedom = isPointInside
 			if isPointInside then
-				exports['qb-core']:DrawText('[E] Check Time', 'left')
+				exports['qb-core']:DrawText('[E] Check Tijd Resterend', 'left')
 			else
 				exports['qb-core']:HideText()
 			end
 		end)
-		canteen = BoxZone:Create(vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z), 2.75, 7.75, {
+		canteen = BoxZone:Create(vector3(Config.Locations["shop"].coords.x, Config.Locations["shop"].coords.y, Config.Locations["shop"].coords.z), 4.15, 7.75, {
 			name="canteen",
 			debugPoly = false,
 		})
 		canteen:onPlayerInOut(function(isPointInside)
 			insidecanteen = isPointInside
 			if isPointInside then
-				exports['qb-core']:DrawText('[E] Open Canteen', 'left')
+				exports['qb-core']:DrawText('[E] Open Kantine', 'left')
 			else
 				exports['qb-core']:HideText()
 			end
