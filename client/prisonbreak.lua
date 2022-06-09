@@ -35,6 +35,21 @@ local function OnHackDone(success)
     end
 end
 
+local function DrawText3D(x, y, z, text)
+    SetTextScale(0.35, 0.35)
+    SetTextFont(4)
+    SetTextProportional(1)
+    SetTextColour(255, 255, 255, 215)
+    SetTextEntry("STRING")
+    SetTextCentre(true)
+    AddTextComponentString(text)
+    SetDrawOrigin(x,y,z, 0)
+    DrawText(0.0, 0.0)
+    local factor = (string.len(text)) / 370
+    DrawRect(0.0, 0.0+0.0125, 0.017+ factor, 0.03, 0, 0, 0, 75)
+    ClearDrawOrigin()
+end
+
 -- Events
 
 AddEventHandler('onResourceStart', function(resource)
@@ -88,7 +103,7 @@ end)
 
 RegisterNetEvent('prison:client:PrisonBreakAlert', function()
     local coords = vector3(Config.Locations["middle"].coords.x, Config.Locations["middle"].coords.y, Config.Locations["middle"].coords.z)
-    local alertData = {title = "New Call", coords = {coords.x, coords.y, coords.z}, description = "Prison outbreak"}
+    local alertData = {title = "New Call", coords = {x = coords.x, y = coords.y, z = coords.z}, description = "Prison outbreak"}
     TriggerEvent("qb-phone:client:addPoliceAlert", alertData)
     TriggerEvent('police:client:policeAlert', coords, "Prison outbreak")
 
