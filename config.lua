@@ -45,7 +45,7 @@ Config.Locations = {
         coords = vector4(1687.45, 2596.03, 45.56, 93.4)
     },
     ["shop"] = {
-        coords = vector4(1781.0, 2560.77, 44.67, 176.23)
+        coords = vector4(1780.956, 2558.974, 45.673, 1.359)
     },
     spawns = {
         [1] = {
@@ -138,7 +138,7 @@ Config.CanteenItems = {
         slot = 3
     },
     [4] = {
-        name = "eggsbacon",
+        name = "egg_bacon",
         price = 8,
         amount = 50,
         info = {},

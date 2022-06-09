@@ -86,7 +86,7 @@ RegisterNetEvent('QBCore:Client:OnPlayerLoaded', function()
 	SetBlockingOfNonTemporaryEvents(canteen_ped, true)
 	TaskStartScenarioInPlace(canteen_ped, 'WORLD_HUMAN_CLIPBOARD', 0, true)
 
-	freedom_ped = CreatePed(0, pedModel , 1836.37, 2585.33, 44.88, 78.67, false, true)
+	freedom_ped = CreatePed(0, pedModel , 1769.831, 2571.891, 45.729, 130.3, false, true)
 	FreezeEntityPosition(freedom_ped, true)
 	SetEntityInvincible(freedom_ped, true)
 	SetBlockingOfNonTemporaryEvents(freedom_ped, true)
@@ -141,24 +141,24 @@ AddEventHandler('onResourceStart', function(resource)
 		TriggerEvent('prison:client:JailAlarm', true)
 	end)
 
-	if DoesEntityExist(canteen_ped) or DoesEntityExist(freedom_ped) then return end
+	if DoesEntityExist(freedom_ped) then return end
 	local pedModel = `s_m_m_armoured_01`
 	RequestModel(pedModel)
 	while not HasModelLoaded(pedModel) do
 		Wait(0)
 	end
-	canteen_ped = CreatePed(0, pedModel, 1786.19, 2557.77, 44.62, 186.04, false, true)
-	FreezeEntityPosition(canteen_ped, true)
-	SetEntityInvincible(canteen_ped, true)
-	SetBlockingOfNonTemporaryEvents(canteen_ped, true)
-	TaskStartScenarioInPlace(canteen_ped, 'WORLD_HUMAN_CLIPBOARD', 0, true)
+	-- canteen_ped = CreatePed(0, pedModel, 1786.19, 2557.77, 44.62, 186.04, false, true)
+	-- FreezeEntityPosition(canteen_ped, true)
+	-- SetEntityInvincible(canteen_ped, true)
+	-- SetBlockingOfNonTemporaryEvents(canteen_ped, true)
+	-- TaskStartScenarioInPlace(canteen_ped, 'WORLD_HUMAN_CLIPBOARD', 0, true)
 
-	freedom_ped = CreatePed(0, pedModel, 1836.37, 2585.33, 44.88, 78.67, false, true)
+	freedom_ped = CreatePed(0, pedModel, 1840.312, 2577.679, 44.88, 8.528, false, true)
 	FreezeEntityPosition(freedom_ped, true)
 	SetEntityInvincible(freedom_ped, true)
 	SetBlockingOfNonTemporaryEvents(freedom_ped, true)
 	TaskStartScenarioInPlace(freedom_ped, 'WORLD_HUMAN_CLIPBOARD', 0, true)
-
+	print("added ped")
 	if not Config.UseTarget then return end
 
 	exports['qb-target']:AddTargetEntity(freedom_ped, {
@@ -176,20 +176,20 @@ AddEventHandler('onResourceStart', function(resource)
 		distance = 2.5,
 	})
 
-	exports['qb-target']:AddTargetEntity(canteen_ped, {
-		options = {
-			{
-				type = "client",
-				event = "prison:client:canteen",
-				icon = 'fas fa-clipboard',
-				label = 'Get Food',
-				canInteract = function()
-					return inJail
-				end
-			}
-		},
-		distance = 2.5,
-	})
+	-- exports['qb-target']:AddTargetEntity(canteen_ped, {
+	-- 	options = {
+	-- 		{
+	-- 			type = "client",
+	-- 			event = "prison:client:canteen",
+	-- 			icon = 'fas fa-clipboard',
+	-- 			label = 'Get Food',
+	-- 			canInteract = function()
+	-- 				return inJail
+	-- 			end
+	-- 		}
+	-- 	},
+	-- 	distance = 2.5,
+	-- })
 end)
 
 RegisterNetEvent('QBCore:Client:OnPlayerUnload', function()
