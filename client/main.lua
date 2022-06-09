@@ -337,7 +337,7 @@ CreateThread(function()
 	if not Config.UseTarget then
 		freedom = BoxZone:Create(vector3(Config.Locations["freedom"].coords.x, Config.Locations["freedom"].coords.y, Config.Locations["freedom"].coords.z), 2.75, 2.75, {
 			name="freedom",
-			debugPoly = true,
+			debugPoly = false,
 		})
 		freedom:onPlayerInOut(function(isPointInside)
 			insidefreedom = isPointInside
